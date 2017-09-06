@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS,Objective-C," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1、禁止手机睡眠1[UIApplication sharedApplication].idleTimerDisabled = YES; 2、隐藏表格某行cell123456789- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;	// 如果是你需要隐">
+<meta name="keywords" content="iOS,Objective-C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS开发常用代码总结(1-20)">
+<meta property="og:url" content="http://yoursite.com/2016/09/05/iOS开发常用代码总结(1-20)/index.html">
+<meta property="og:site_name" content="sjxt">
+<meta property="og:description" content="1、禁止手机睡眠1[UIApplication sharedApplication].idleTimerDisabled = YES; 2、隐藏表格某行cell123456789- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;	// 如果是你需要隐">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-06T00:20:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS开发常用代码总结(1-20)">
+<meta name="twitter:description" content="1、禁止手机睡眠1[UIApplication sharedApplication].idleTimerDisabled = YES; 2、隐藏表格某行cell123456789- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;	// 如果是你需要隐">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/05/iOS开发常用代码总结(1-20)/"/>
+
+
+
+
+
+  <title>iOS开发常用代码总结(1-20) | sjxt</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sjxt</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">IT民工 | 旅游 | 美剧 | 运动</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/05/iOS开发常用代码总结(1-20)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sjxt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/15951977?v=4&u=d8ec064ae8342a4f2cbbd7837d2b2f4844c4c115&s=400">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sjxt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS开发常用代码总结(1-20)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-05T16:25:52-07:00">
+                2016-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1、禁止手机睡眠"><a href="#1、禁止手机睡眠" class="headerlink" title="1、禁止手机睡眠"></a>1、禁止手机睡眠</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[UIApplication sharedApplication].idleTimerDisabled = YES;</div></pre></td></tr></table></figure>
+<h4 id="2、隐藏表格某行cell"><a href="#2、隐藏表格某行cell" class="headerlink" title="2、隐藏表格某行cell"></a>2、隐藏表格某行cell</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath</div><div class="line">&#123;</div><div class="line">	// 如果是你需要隐藏的那一行，返回高度为0</div><div class="line">    return (indexPath.row == YouWantToHideRow) ? 0 : 44;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 然后再你需要隐藏cell的时候调用</div><div class="line">[self.tableView beginUpdates];</div><div class="line">[self.tableView endUpdates];</div></pre></td></tr></table></figure>
+<h4 id="3、禁用Button亮"><a href="#3、禁用Button亮" class="headerlink" title="3、禁用Button亮"></a>3、禁用Button亮</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">button.adjustsImageWhenHighlighted = NO;</div><div class="line">或者在创建的时候</div><div class="line">UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];</div></pre></td></tr></table></figure>
+<h4 id="4、动画切换window的根控制器"><a href="#4、动画切换window的根控制器" class="headerlink" title="4、动画切换window的根控制器"></a>4、动画切换window的根控制器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// options是动画选项</div><div class="line">[UIView transitionWithView:[UIApplication sharedApplication].keyWindow duration:0.5f options:UIViewAnimationOptionTransitionCrossDissolve animations:^&#123;</div><div class="line">        BOOL oldState = [UIView areAnimationsEnabled];</div><div class="line">        [UIView setAnimationsEnabled:NO];</div><div class="line">        [UIApplication sharedApplication].keyWindow.rootViewController = [RootViewController new];</div><div class="line">        [UIView setAnimationsEnabled:oldState];</div><div class="line">    &#125; completion:^(BOOL finished) &#123;</div><div class="line"></div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
+<h4 id="5、去除数组中重复的元素"><a href="#5、去除数组中重复的元素" class="headerlink" title="5、去除数组中重复的元素"></a>5、去除数组中重复的元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSArray *newArr = [oldArr valueForKeyPath:@“@distinctUnionOfObjects.self&quot;];</div></pre></td></tr></table></figure>
+<h4 id="6、在iOS8-0系统中，表格的内容显示不全，且事件无法响应问题"><a href="#6、在iOS8-0系统中，表格的内容显示不全，且事件无法响应问题" class="headerlink" title="6、在iOS8.0系统中，表格的内容显示不全，且事件无法响应问题"></a>6、在iOS8.0系统中，表格的内容显示不全，且事件无法响应问题</h4><p>去实现tableView的heightForRowAtIndexPath这个方法试一试</p>
+<h4 id="7、iOS8-0中实现表格的侧滑功能必须实现下面这个方法，否则无法侧滑"><a href="#7、iOS8-0中实现表格的侧滑功能必须实现下面这个方法，否则无法侧滑" class="headerlink" title="7、iOS8.0中实现表格的侧滑功能必须实现下面这个方法，否则无法侧滑"></a>7、iOS8.0中实现表格的侧滑功能必须实现下面这个方法，否则无法侧滑</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 必须写的方法，和editActionsForRowAtIndexPath配对使用，里面什么不写也行</div><div class="line">- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="8、进入app权限设置"><a href="#8、进入app权限设置" class="headerlink" title="8、进入app权限设置"></a>8、进入app权限设置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 跳进app设置</div><div class="line">if (UIApplicationOpenSettingsURLString != NULL) &#123;</div><div class="line">    UIApplication *application = [UIApplication sharedApplication];</div><div class="line">    NSURL *URL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];</div><div class="line">    if ([application respondsToSelector:@selector(openURL:options:completionHandler:)]) &#123;</div><div class="line">        [application openURL:URL options:@&#123;&#125; completionHandler:nil];</div><div class="line">    &#125; else &#123;</div><div class="line">        [application openURL:URL];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="9、collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动："><a href="#9、collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动：" class="headerlink" title="9、collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动："></a>9、collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">collectionView.alwaysBounceHorizontal = YES;</div><div class="line">collectionView.alwaysBounceVertical = YES;</div></pre></td></tr></table></figure>
+<h4 id="10、设置navigationBar上的title颜色和大小"><a href="#10、设置navigationBar上的title颜色和大小" class="headerlink" title="10、设置navigationBar上的title颜色和大小"></a>10、设置navigationBar上的title颜色和大小</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[self.navigationController.navigationBar setTitleTextAttributes:@&#123;NSForegroundColorAttributeName : [UIColor youColor], NSFontAttributeName : [UIFont systemFontOfSize:15]&#125;]</div></pre></td></tr></table></figure>
+<h4 id="11、常用的宏定义"><a href="#11、常用的宏定义" class="headerlink" title="11、常用的宏定义"></a>11、常用的宏定义</h4><ul>
+<li><p>强／弱引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#define WEAK_SELF typeof(self) __weak weakSelf = self;</div><div class="line">#define STRONG_SELF typeof(weakSelf) __strong strongSelf = weakSelf;</div></pre></td></tr></table></figure>
+</li>
+<li><p>由角度转换弧度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define DegreesToRadian(x) (M_PI * (x) / 180.0)</div></pre></td></tr></table></figure>
+</li>
+<li><p>由弧度转换角度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define RadianToDegrees(radian) (radian*180.0)/(M_PI)</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取图片资源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define GetImage(imageName) [UIImage imageNamed:[NSString stringWithFormat:@&quot;%@&quot;,imageName]]</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取temp</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define PathTemp NSTemporaryDirectory()</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取沙盒Document</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define PathDocument [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取沙盒Cache</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#define PathCache [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]</div></pre></td></tr></table></figure>
+</li>
+<li><p>自定义Debug日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#pragma mark - Debug日志</div><div class="line">#ifdef DEBUG</div><div class="line">#    define DLog(...) NSLog(__VA_ARGS__)</div><div class="line">#    define FLog(s) NSLog(@&quot;[%@-%@]:\n%@&quot;,NSStringFromClass([self class]),NSStringFromSelector(_cmd),s)</div><div class="line">#    define TLog(...) NSLog(@&quot;[%@-%@]:\n%@&quot;,NSStringFromClass([self class]),NSStringFromSelector(_cmd),[NSString stringWithFormat:__VA_ARGS__])</div><div class="line">#else</div><div class="line">#    define DLog(...)</div><div class="line">#    define FLog(...)</div><div class="line">#    define TLog(...)</div><div class="line">#endif</div></pre></td></tr></table></figure>
+</li>
+<li><p>GCD延迟执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//延迟执行</div><div class="line">#define DISPATCH_AFTER(delayInSeconds,block) dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)), dispatch_get_main_queue(), block)</div><div class="line">#define DISPATCH_ASYNC_GET_MAIN(block) dispatch_async(dispatch_get_main_queue(), block)</div><div class="line">#define DISPATCH_ASYNC_GET_GLOBAL(block) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="12、随机颜色"><a href="#12、随机颜色" class="headerlink" title="12、随机颜色"></a>12、随机颜色</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">+ (UIColor *)RandomColor &#123;</div><div class="line">    NSInteger aRedValue = arc4random() % 255;</div><div class="line">    NSInteger aGreenValue = arc4random() % 255;</div><div class="line">    NSInteger aBlueValue = arc4random() % 255;</div><div class="line">    UIColor *randColor = [UIColor colorWithRed:aRedValue / 255.0f green:aGreenValue / 255.0f blue:aBlueValue / 255.0f alpha:1.0f];</div><div class="line">    return randColor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="13、获取window"><a href="#13、获取window" class="headerlink" title="13、获取window"></a>13、获取window</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">+(UIWindow*)getWindow &#123;</div><div class="line">    UIWindow* win = nil; //[UIApplication sharedApplication].keyWindow;</div><div class="line">    for (id item in [UIApplication sharedApplication].windows) &#123;</div><div class="line">        if ([item class] == [UIWindow class]) &#123;</div><div class="line">            if (!((UIWindow*)item).hidden) &#123;</div><div class="line">                win = item;</div><div class="line">                break;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return win;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="14、修改textField的placeholder的字体颜色、大小"><a href="#14、修改textField的placeholder的字体颜色、大小" class="headerlink" title="14、修改textField的placeholder的字体颜色、大小"></a>14、修改textField的placeholder的字体颜色、大小</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[textField setValue:[UIColor redColor] forKeyPath:@&quot;_placeholderLabel.textColor&quot;];</div><div class="line">[textField setValue:[UIFont boldSystemFontOfSize:16] forKeyPath:@&quot;_placeholderLabel.font&quot;];</div></pre></td></tr></table></figure>
+<h4 id="15、统一收起键盘"><a href="#15、统一收起键盘" class="headerlink" title="15、统一收起键盘"></a>15、统一收起键盘</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[[[UIApplication sharedApplication] keyWindow] endEditing:YES];</div></pre></td></tr></table></figure>
+<h4 id="16、控制屏幕旋转，在控制器中写"><a href="#16、控制屏幕旋转，在控制器中写" class="headerlink" title="16、控制屏幕旋转，在控制器中写"></a>16、控制屏幕旋转，在控制器中写</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// 是否支持自动转屏</div><div class="line">- (BOOL)shouldAutorotate &#123;</div><div class="line">    return YES;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 支持哪些屏幕方向</div><div class="line">- (UIInterfaceOrientationMask)supportedInterfaceOrientations &#123;</div><div class="line">    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 默认的屏幕方向（当前ViewController必须是通过模态出来的UIViewController（模态带导航的无效）方式展现出来的，才会调用这个方法</div><div class="line">- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation &#123;</div><div class="line">    return UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="17、获取app缓存大小"><a href="#17、获取app缓存大小" class="headerlink" title="17、获取app缓存大小"></a>17、获取app缓存大小</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">- (CGFloat)getCachSize &#123;</div><div class="line"></div><div class="line">    NSUInteger imageCacheSize = [[SDImageCache sharedImageCache] getSize];</div><div class="line">    //获取自定义缓存大小</div><div class="line">    //用枚举器遍历 一个文件夹的内容</div><div class="line">    //1.获取 文件夹枚举器</div><div class="line">    NSString *myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@&quot;Library/Caches&quot;];</div><div class="line">    NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:myCachePath];</div><div class="line">    __block NSUInteger count = 0;</div><div class="line">    //2.遍历</div><div class="line">    for (NSString *fileName in enumerator) &#123;</div><div class="line">        NSString *path = [myCachePath stringByAppendingPathComponent:fileName];</div><div class="line">        NSDictionary *fileDict = [[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil];</div><div class="line">        count += fileDict.fileSize;//自定义所有缓存大小</div><div class="line">    &#125;</div><div class="line">    // 得到是字节  转化为M</div><div class="line">    CGFloat totalSize = ((CGFloat)imageCacheSize+count)/1024/1024;</div><div class="line">    return totalSize;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="18、清理app缓存"><a href="#18、清理app缓存" class="headerlink" title="18、清理app缓存"></a>18、清理app缓存</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">- (void)handleClearView &#123;</div><div class="line">    //删除两部分</div><div class="line">    //1.删除 sd 图片缓存</div><div class="line">    //先清除内存中的图片缓存</div><div class="line">    [[SDImageCache sharedImageCache] clearMemory];</div><div class="line">    //清除磁盘的缓存</div><div class="line">    [[SDImageCache sharedImageCache] clearDisk];</div><div class="line">    //2.删除自己缓存</div><div class="line">    NSString *myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@&quot;Library/Caches&quot;];</div><div class="line">    [[NSFileManager defaultManager] removeItemAtPath:myCachePath error:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="19、长按复制功能"><a href="#19、长按复制功能" class="headerlink" title="19、长按复制功能"></a>19、长按复制功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pasteBoard:)]];</div><div class="line">&#125;</div><div class="line">- (void)pasteBoard:(UILongPressGestureRecognizer *)longPress &#123;</div><div class="line">    if (longPress.state == UIGestureRecognizerStateBegan) &#123;</div><div class="line">        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];</div><div class="line">        pasteboard.string = @&quot;需要复制的文本&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="20、获取手机和app信息"><a href="#20、获取手机和app信息" class="headerlink" title="20、获取手机和app信息"></a>20、获取手机和app信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];</div><div class="line">CFShow(infoDictionary);</div><div class="line">// app名称</div><div class="line">NSString *app_Name = [infoDictionary objectForKey:@&quot;CFBundleDisplayName&quot;];</div><div class="line">// app版本</div><div class="line">NSString *app_Version = [infoDictionary objectForKey:@&quot;CFBundleShortVersionString&quot;];</div><div class="line">// app build版本</div><div class="line">NSString *app_build = [infoDictionary objectForKey:@&quot;CFBundleVersion&quot;];</div><div class="line"></div><div class="line">    //手机序列号</div><div class="line">    NSString* identifierNumber = [[UIDevice currentDevice] uniqueIdentifier];</div><div class="line">    NSLog(@&quot;手机序列号: %@&quot;,identifierNumber);</div><div class="line">    //手机别名： 用户定义的名称</div><div class="line">    NSString* userPhoneName = [[UIDevice currentDevice] name];</div><div class="line">    NSLog(@&quot;手机别名: %@&quot;, userPhoneName);</div><div class="line">    //设备名称</div><div class="line">    NSString* deviceName = [[UIDevice currentDevice] systemName];</div><div class="line">    NSLog(@&quot;设备名称: %@&quot;,deviceName );</div><div class="line">    //手机系统版本</div><div class="line">    NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];</div><div class="line">    NSLog(@&quot;手机系统版本: %@&quot;, phoneVersion);</div><div class="line">    //手机型号</div><div class="line">    NSString* phoneModel = [[UIDevice currentDevice] model];</div><div class="line">    NSLog(@&quot;手机型号: %@&quot;,phoneModel );</div><div class="line">    //地方型号  （国际化区域名称）</div><div class="line">    NSString* localPhoneModel = [[UIDevice currentDevice] localizedModel];</div><div class="line">    NSLog(@&quot;国际化区域名称: %@&quot;,localPhoneModel );</div><div class="line"></div><div class="line">    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];</div><div class="line">    // 当前应用名称</div><div class="line">    NSString *appCurName = [infoDictionary objectForKey:@&quot;CFBundleDisplayName&quot;];</div><div class="line">    NSLog(@&quot;当前应用名称：%@&quot;,appCurName);</div><div class="line">    // 当前应用软件版本  比如：1.0.1</div><div class="line">    NSString *appCurVersion = [infoDictionary objectForKey:@&quot;CFBundleShortVersionString&quot;];</div><div class="line">    NSLog(@&quot;当前应用软件版本:%@&quot;,appCurVersion);</div><div class="line">    // 当前应用版本号码  int类型</div><div class="line">    NSString *appCurVersionNum = [infoDictionary objectForKey:@&quot;CFBundleVersion&quot;];</div><div class="line">    NSLog(@&quot;当前应用版本号码：%@&quot;,appCurVersionNum);</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Objective-C/" rel="tag"># Objective-C</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/01/基于Hexo在mac上搭建个人博客/" rel="next" title="基于Hexo在mac上搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 基于Hexo在mac上搭建个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/15951977?v=4&u=d8ec064ae8342a4f2cbbd7837d2b2f4844c4c115&s=400"
+               alt="sjxt" />
+          <p class="site-author-name" itemprop="name">sjxt</p>
+           
+              <p class="site-description motion-element" itemprop="description">泰山不拒细壤，故能成其高；江海不拒细流，故能成其深。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sjxt" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/11bd09a788bd/timeline" target="_blank" title="Jianshu">
+                  
+                    <i class="fa fa-fw fa-skype"></i>
+                  
+                    
+                      Jianshu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://devhuang.github.io/" title="devHuang" target="_blank">devHuang</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、禁止手机睡眠"><span class="nav-text">1、禁止手机睡眠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、隐藏表格某行cell"><span class="nav-text">2、隐藏表格某行cell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、禁用Button亮"><span class="nav-text">3、禁用Button亮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、动画切换window的根控制器"><span class="nav-text">4、动画切换window的根控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、去除数组中重复的元素"><span class="nav-text">5、去除数组中重复的元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、在iOS8-0系统中，表格的内容显示不全，且事件无法响应问题"><span class="nav-text">6、在iOS8.0系统中，表格的内容显示不全，且事件无法响应问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、iOS8-0中实现表格的侧滑功能必须实现下面这个方法，否则无法侧滑"><span class="nav-text">7、iOS8.0中实现表格的侧滑功能必须实现下面这个方法，否则无法侧滑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、进入app权限设置"><span class="nav-text">8、进入app权限设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动："><span class="nav-text">9、collectionView的内容小于其宽高的时候是不能滚动的，设置可以滚动：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、设置navigationBar上的title颜色和大小"><span class="nav-text">10、设置navigationBar上的title颜色和大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、常用的宏定义"><span class="nav-text">11、常用的宏定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、随机颜色"><span class="nav-text">12、随机颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13、获取window"><span class="nav-text">13、获取window</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14、修改textField的placeholder的字体颜色、大小"><span class="nav-text">14、修改textField的placeholder的字体颜色、大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15、统一收起键盘"><span class="nav-text">15、统一收起键盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16、控制屏幕旋转，在控制器中写"><span class="nav-text">16、控制屏幕旋转，在控制器中写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17、获取app缓存大小"><span class="nav-text">17、获取app缓存大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18、清理app缓存"><span class="nav-text">18、清理app缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19、长按复制功能"><span class="nav-text">19、长按复制功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20、获取手机和app信息"><span class="nav-text">20、获取手机和app信息</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sjxt</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
