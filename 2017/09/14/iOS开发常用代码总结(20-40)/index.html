@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS,Objective-C,Xcode," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/15951977?v=4&u=d8ec064ae8342a4f2cbbd7837d2b2f4844c4c115&s=400?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="21、image圆角12345678910111213141516171819- (UIImage *)circleImage&amp;#123;    // NO代表透明    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);    // 获得上下文    CGContextRef ctx = UIGraphicsGetCurrentCo">
+<meta name="keywords" content="iOS,Objective-C,Xcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS开发常用代码总结(20-40)">
+<meta property="og:url" content="http://yoursite.com/2017/09/14/iOS开发常用代码总结(20-40)/index.html">
+<meta property="og:site_name" content="sjxt">
+<meta property="og:description" content="21、image圆角12345678910111213141516171819- (UIImage *)circleImage&amp;#123;    // NO代表透明    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);    // 获得上下文    CGContextRef ctx = UIGraphicsGetCurrentCo">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-14T23:07:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS开发常用代码总结(20-40)">
+<meta name="twitter:description" content="21、image圆角12345678910111213141516171819- (UIImage *)circleImage&amp;#123;    // NO代表透明    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);    // 获得上下文    CGContextRef ctx = UIGraphicsGetCurrentCo">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/14/iOS开发常用代码总结(20-40)/"/>
+
+
+
+
+
+  <title>iOS开发常用代码总结(20-40) | sjxt</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">sjxt</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">IT民工 | 旅游 | 美剧 | 运动</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/iOS开发常用代码总结(20-40)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sjxt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/15951977?v=4&u=d8ec064ae8342a4f2cbbd7837d2b2f4844c4c115&s=400">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="sjxt">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">iOS开发常用代码总结(20-40)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T15:41:03-07:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/09/14/iOS开发常用代码总结(20-40)/" class="leancloud_visitors" data-flag-title="iOS开发常用代码总结(20-40)">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="21、image圆角"><a href="#21、image圆角" class="headerlink" title="21、image圆角"></a>21、image圆角</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- (UIImage *)circleImage</div><div class="line">&#123;</div><div class="line">    // NO代表透明</div><div class="line">    UIGraphicsBeginImageContextWithOptions(self.size, NO, 1);</div><div class="line">    // 获得上下文</div><div class="line">    CGContextRef ctx = UIGraphicsGetCurrentContext();</div><div class="line">    // 添加一个圆</div><div class="line">    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);</div><div class="line">    // 方形变圆形</div><div class="line">    CGContextAddEllipseInRect(ctx, rect);</div><div class="line">    // 裁剪</div><div class="line">    CGContextClip(ctx);</div><div class="line">    // 将图片画上去</div><div class="line">    [self drawInRect:rect];</div><div class="line">    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();</div><div class="line">    UIGraphicsEndImageContext();</div><div class="line">    return image;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="22、JSON字符串转字典"><a href="#22、JSON字符串转字典" class="headerlink" title="22、JSON字符串转字典"></a>22、JSON字符串转字典</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">+ (NSDictionary *)parseJSONStringToNSDictionary:(NSString *)JSONString &#123;</div><div class="line">    NSData *JSONData = [JSONString dataUsingEncoding:NSUTF8StringEncoding];</div><div class="line">    NSDictionary *responseJSON = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingMutableLeaves error:nil];</div><div class="line">    return responseJSON;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="23、身份证号码验证"><a href="#23、身份证号码验证" class="headerlink" title="23、身份证号码验证"></a>23、身份证号码验证</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (BOOL)validateIdentityCard &#123;</div><div class="line">    BOOL flag;</div><div class="line">    if (self.length &lt;= 0) &#123;</div><div class="line">        flag = NO;</div><div class="line">        return flag;</div><div class="line">    &#125;</div><div class="line">    NSString *regex2 = @&quot;^(\\d&#123;14&#125;|\\d&#123;17&#125;)(\\d|[xX])$&quot;;</div><div class="line">    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@&quot;SELF MATCHES %@&quot;,regex2];</div><div class="line">    return [identityCardPredicate evaluateWithObject:self];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="24、获取当前显示的控制器"><a href="#24、获取当前显示的控制器" class="headerlink" title="24、获取当前显示的控制器"></a>24、获取当前显示的控制器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">- (UIViewController *)getVisibleViewControllerFrom:(UIViewController*)vc &#123;</div><div class="line">    if ([vc isKindOfClass:[UINavigationController class]]) &#123;</div><div class="line">        return [self getVisibleViewControllerFrom:[((UINavigationController*) vc) visibleViewController]];</div><div class="line">    &#125;else if ([vc isKindOfClass:[UITabBarController class]])&#123;</div><div class="line">        return [self getVisibleViewControllerFrom:[((UITabBarController*) vc) selectedViewController]];</div><div class="line">    &#125; else &#123;</div><div class="line">        if (vc.presentedViewController) &#123;</div><div class="line">            return [self getVisibleViewControllerFrom:vc.presentedViewController];</div><div class="line">        &#125; else &#123;</div><div class="line">            return vc;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="25、判断当前图片是否存在透明通道"><a href="#25、判断当前图片是否存在透明通道" class="headerlink" title="25、判断当前图片是否存在透明通道"></a>25、判断当前图片是否存在透明通道</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- (BOOL)hasAlphaChannel&#123;</div><div class="line">    CGImageAlphaInfo alpha = CGImageGetAlphaInfo(self.CGImage);</div><div class="line">    return (alpha == kCGImageAlphaFirst ||</div><div class="line">            alpha == kCGImageAlphaLast ||</div><div class="line">            alpha == kCGImageAlphaPremultipliedFirst ||</div><div class="line">            alpha == kCGImageAlphaPremultipliedLast);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="26、根据bundle中的文件名读取图片"><a href="#26、根据bundle中的文件名读取图片" class="headerlink" title="26、根据bundle中的文件名读取图片"></a>26、根据bundle中的文件名读取图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">+ (UIImage *)imageWithFileName:(NSString *)name &#123;</div><div class="line">    NSString *extension = @&quot;png&quot;;</div><div class="line"></div><div class="line">    NSArray *components = [name componentsSeparatedByString:@&quot;.&quot;];</div><div class="line">    if ([components count] &gt;= 2) &#123;</div><div class="line">        NSUInteger lastIndex = components.count - 1;</div><div class="line">        extension = [components objectAtIndex:lastIndex];</div><div class="line"></div><div class="line">        name = [name substringToIndex:(name.length-(extension.length+1))];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // 如果为Retina屏幕且存在对应图片，则返回Retina图片，否则查找普通图片</div><div class="line">    if ([UIScreen mainScreen].scale == 2.0) &#123;</div><div class="line">        name = [name stringByAppendingString:@&quot;@2x&quot;];</div><div class="line"></div><div class="line">        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:extension];</div><div class="line">        if (path != nil) &#123;</div><div class="line">            return [UIImage imageWithContentsOfFile:path];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    if ([UIScreen mainScreen].scale == 3.0) &#123;</div><div class="line">        name = [name stringByAppendingString:@&quot;@3x&quot;];</div><div class="line"></div><div class="line">        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:extension];</div><div class="line">        if (path != nil) &#123;</div><div class="line">            return [UIImage imageWithContentsOfFile:path];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:extension];</div><div class="line">    if (path) &#123;</div><div class="line">        return [UIImage imageWithContentsOfFile:path];</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return nil;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="27、cell去除选中效果"><a href="#27、cell去除选中效果" class="headerlink" title="27、cell去除选中效果"></a>27、cell去除选中效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cell.selectionStyle = UITableViewCellSelectionStyleNone;</div></pre></td></tr></table></figure>
+<h4 id="28、cell点按效果"><a href="#28、cell点按效果" class="headerlink" title="28、cell点按效果"></a>28、cell点按效果</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath &#123;</div><div class="line">    [tableView deselectRowAtIndexPath:indexPath animated:YES];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="29、移除字符串中的空格和换行"><a href="#29、移除字符串中的空格和换行" class="headerlink" title="29、移除字符串中的空格和换行"></a>29、移除字符串中的空格和换行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">+ (NSString *)removeSpaceAndNewline:(NSString *)str &#123;</div><div class="line">    NSString *temp = [str stringByReplacingOccurrencesOfString:@&quot; &quot; withString:@&quot;&quot;];</div><div class="line">    temp = [temp stringByReplacingOccurrencesOfString:@&quot;\r&quot; withString:@&quot;&quot;];</div><div class="line">    temp = [temp stringByReplacingOccurrencesOfString:@&quot;\n&quot; withString:@&quot;&quot;];</div><div class="line">    return temp;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="30、判断字符串中是否有空格"><a href="#30、判断字符串中是否有空格" class="headerlink" title="30、判断字符串中是否有空格"></a>30、判断字符串中是否有空格</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">+ (BOOL)isBlank:(NSString *)str &#123;</div><div class="line">    NSRange _range = [str rangeOfString:@&quot; &quot;];</div><div class="line">    if (_range.location != NSNotFound) &#123;</div><div class="line">        //有空格</div><div class="line">        return YES;</div><div class="line">    &#125; else &#123;</div><div class="line">        //没有空格</div><div class="line">        return NO;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="31、获取一个视频的第一帧图片"><a href="#31、获取一个视频的第一帧图片" class="headerlink" title="31、获取一个视频的第一帧图片"></a>31、获取一个视频的第一帧图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">+ (UIImage *)getFirstFrameWithVideoFile:(NSString *)filepath&#123;</div><div class="line"></div><div class="line">	NSURL *url = [NSURL URLWithString:filepath];</div><div class="line">    AVURLAsset *asset1 = [[AVURLAsset alloc] initWithURL:url options:nil];</div><div class="line">    AVAssetImageGenerator *generate1 = [[AVAssetImageGenerator alloc] initWithAsset:asset1];</div><div class="line">    generate1.appliesPreferredTrackTransform = YES;</div><div class="line">    NSError *err = NULL;</div><div class="line">    CMTime time = CMTimeMake(1, 2);</div><div class="line">    CGImageRef oneRef = [generate1 copyCGImageAtTime:time actualTime:NULL error:&amp;err];</div><div class="line">    UIImage *one = [[UIImage alloc] initWithCGImage:oneRef];</div><div class="line"></div><div class="line">    return one;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="32、获取视频的时长"><a href="#32、获取视频的时长" class="headerlink" title="32、获取视频的时长"></a>32、获取视频的时长</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">+ (NSInteger)getVideoTimeByUrlString:(NSString *)urlString &#123;</div><div class="line">    NSURL *videoUrl = [NSURL URLWithString:urlString];</div><div class="line">    AVURLAsset *avUrl = [AVURLAsset assetWithURL:videoUrl];</div><div class="line">    CMTime time = [avUrl duration];</div><div class="line">    int seconds = ceil(time.value/time.timescale);</div><div class="line">    return seconds;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="33、isKindOfClass和isMemberOfClass的区别"><a href="#33、isKindOfClass和isMemberOfClass的区别" class="headerlink" title="33、isKindOfClass和isMemberOfClass的区别"></a>33、isKindOfClass和isMemberOfClass的区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">isKindOfClass可以判断某个对象是否属于某个类，或者这个类的子类。</div><div class="line">isMemberOfClass更加精准，它只能判断这个对象类型是否为这个类(不能判断子类)</div></pre></td></tr></table></figure>
+<h4 id="34、一次删除某个按钮的多个点击事件"><a href="#34、一次删除某个按钮的多个点击事件" class="headerlink" title="34、一次删除某个按钮的多个点击事件"></a>34、一次删除某个按钮的多个点击事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[youButton removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];</div></pre></td></tr></table></figure>
+<h4 id="35、UITextView中打开或禁用复制，剪切，选择，全选等功能"><a href="#35、UITextView中打开或禁用复制，剪切，选择，全选等功能" class="headerlink" title="35、UITextView中打开或禁用复制，剪切，选择，全选等功能"></a>35、UITextView中打开或禁用复制，剪切，选择，全选等功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// 继承UITextView重写这个方法</div><div class="line">- (BOOL)canPerformAction:(SEL)action withSender:(id)sender</div><div class="line">&#123;</div><div class="line">// 返回NO为禁用，YES为开启</div><div class="line">    // 粘贴</div><div class="line">    if (action == @selector(paste:)) return NO;</div><div class="line">    // 剪切</div><div class="line">    if (action == @selector(cut:)) return NO;</div><div class="line">    // 复制</div><div class="line">    if (action == @selector(copy:)) return NO;</div><div class="line">    // 选择</div><div class="line">    if (action == @selector(select:)) return NO;</div><div class="line">    // 选中全部</div><div class="line">    if (action == @selector(selectAll:)) return NO;</div><div class="line">    // 删除</div><div class="line">    if (action == @selector(delete:)) return NO;</div><div class="line">    // 分享</div><div class="line">    if (action == @selector(share)) return NO;</div><div class="line">    return [super canPerformAction:action withSender:sender];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="36、为一个view添加虚线边框"><a href="#36、为一个view添加虚线边框" class="headerlink" title="36、为一个view添加虚线边框"></a>36、为一个view添加虚线边框</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CAShapeLayer *border = [CAShapeLayer layer];</div><div class="line">border.strokeColor = [UIColor colorWithRed:67/255.0f green:37/255.0f blue:83/255.0f alpha:1].CGColor;</div><div class="line">border.fillColor = nil;</div><div class="line">border.lineDashPattern = @[@4, @2];</div><div class="line">border.path = [UIBezierPath bezierPathWithRect:view.bounds].CGPath;</div><div class="line">border.frame = view.bounds;</div><div class="line">[view.layer addSublayer:border];</div></pre></td></tr></table></figure>
+<h4 id="37、将一个image保存在相册中"><a href="#37、将一个image保存在相册中" class="headerlink" title="37、将一个image保存在相册中"></a>37、将一个image保存在相册中</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);</div><div class="line"></div><div class="line">或者</div><div class="line">#import &lt;Photos/Photos.h&gt;</div><div class="line">[[PHPhotoLibrary sharedPhotoLibrary] performChanges:^&#123;</div><div class="line">        PHAssetChangeRequest *changeRequest = [PHAssetChangeRequest creationRequestForAssetFromImage:image];</div><div class="line">        changeRequest.creationDate          = [NSDate date];</div><div class="line">    &#125; completionHandler:^(BOOL success, NSError *error) &#123;</div><div class="line">        if (success) &#123;</div><div class="line">            NSLog(@&quot;successfully saved&quot;);</div><div class="line">        &#125;</div><div class="line">        else &#123;</div><div class="line">            NSLog(@&quot;error saving to photos: %@&quot;, error);</div><div class="line">        &#125;</div><div class="line">    &#125;];</div></pre></td></tr></table></figure>
+<h4 id="38、在指定的宽度下，让UILabel自动设置最佳font"><a href="#38、在指定的宽度下，让UILabel自动设置最佳font" class="headerlink" title="38、在指定的宽度下，让UILabel自动设置最佳font"></a>38、在指定的宽度下，让UILabel自动设置最佳font</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">label.adjustsFontSizeToFitWidth = YES;</div></pre></td></tr></table></figure>
+<h4 id="39、在状态栏增加网络请求的菊花，类似safari加载网页的时候状态栏菊花"><a href="#39、在状态栏增加网络请求的菊花，类似safari加载网页的时候状态栏菊花" class="headerlink" title="39、在状态栏增加网络请求的菊花，类似safari加载网页的时候状态栏菊花"></a>39、在状态栏增加网络请求的菊花，类似safari加载网页的时候状态栏菊花</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;</div></pre></td></tr></table></figure>
+<h4 id="40、不让控制器的view随着控制器的xib拉伸或压缩"><a href="#40、不让控制器的view随着控制器的xib拉伸或压缩" class="headerlink" title="40、不让控制器的view随着控制器的xib拉伸或压缩"></a>40、不让控制器的view随着控制器的xib拉伸或压缩</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Objective-C/" rel="tag"># Objective-C</a>
+          
+            <a href="/tags/Xcode/" rel="tag"># Xcode</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/05/iOS开发常用代码总结(1-20)/" rel="next" title="iOS开发常用代码总结(1-20)">
+                <i class="fa fa-chevron-left"></i> iOS开发常用代码总结(1-20)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars2.githubusercontent.com/u/15951977?v=4&u=d8ec064ae8342a4f2cbbd7837d2b2f4844c4c115&s=400"
+               alt="sjxt" />
+          <p class="site-author-name" itemprop="name">sjxt</p>
+           
+              <p class="site-description motion-element" itemprop="description">泰山不拒细壤，故能成其高；江海不拒细流，故能成其深。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sjxt" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/11bd09a788bd/timeline" target="_blank" title="jianshu">
+                  
+                    <i class="fa fa-fw fa-book"></i>
+                  
+                    
+                      jianshu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://devhuang.github.io/" title="devHuang" target="_blank">devHuang</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#21、image圆角"><span class="nav-text">21、image圆角</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22、JSON字符串转字典"><span class="nav-text">22、JSON字符串转字典</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23、身份证号码验证"><span class="nav-text">23、身份证号码验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24、获取当前显示的控制器"><span class="nav-text">24、获取当前显示的控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#25、判断当前图片是否存在透明通道"><span class="nav-text">25、判断当前图片是否存在透明通道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26、根据bundle中的文件名读取图片"><span class="nav-text">26、根据bundle中的文件名读取图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#27、cell去除选中效果"><span class="nav-text">27、cell去除选中效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28、cell点按效果"><span class="nav-text">28、cell点按效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#29、移除字符串中的空格和换行"><span class="nav-text">29、移除字符串中的空格和换行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#30、判断字符串中是否有空格"><span class="nav-text">30、判断字符串中是否有空格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#31、获取一个视频的第一帧图片"><span class="nav-text">31、获取一个视频的第一帧图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#32、获取视频的时长"><span class="nav-text">32、获取视频的时长</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#33、isKindOfClass和isMemberOfClass的区别"><span class="nav-text">33、isKindOfClass和isMemberOfClass的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#34、一次删除某个按钮的多个点击事件"><span class="nav-text">34、一次删除某个按钮的多个点击事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#35、UITextView中打开或禁用复制，剪切，选择，全选等功能"><span class="nav-text">35、UITextView中打开或禁用复制，剪切，选择，全选等功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#36、为一个view添加虚线边框"><span class="nav-text">36、为一个view添加虚线边框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#37、将一个image保存在相册中"><span class="nav-text">37、将一个image保存在相册中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#38、在指定的宽度下，让UILabel自动设置最佳font"><span class="nav-text">38、在指定的宽度下，让UILabel自动设置最佳font</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#39、在状态栏增加网络请求的菊花，类似safari加载网页的时候状态栏菊花"><span class="nav-text">39、在状态栏增加网络请求的菊花，类似safari加载网页的时候状态栏菊花</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#40、不让控制器的view随着控制器的xib拉伸或压缩"><span class="nav-text">40、不让控制器的view随着控制器的xib拉伸或压缩</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sjxt</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共2.9k字</span>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("JGnjVM1jQQolfu6p08bMwbKi-gzGzoHsz", "XvKrstCOMS09ptUStUinA5BL");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
