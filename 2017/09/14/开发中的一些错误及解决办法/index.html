@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,github,next,npm," />
+  <meta name="keywords" content="iOS,npm,cocoapods," />
 
 
 
@@ -94,23 +94,18 @@
 
 
 
-<meta name="description" content="博客的搭建大致分为以下几个步骤  安装Node.js 安装Git 安装Hexo 安装主题 本地运行测试 注册github并创建仓库 部署到github中去   1、安装Node.js安装先安装包管理器brew，参考：http://www.cnblogs.com/EasonJim/p/6287098.html有以上前提后，输入： 1brew install node 验证12node -vnpm -">
-<meta name="keywords" content="hexo,github,next,npm">
+<meta name="description" content="1、tableview遇到这种报错failed to obtain a cell from its dataSource12是因为你的cell被调用的早了。先循环使用了cell，后又创建cell。顺序错了可能原因：1、xib的cell没有注册 2、内存中已经有这个cell的缓存了(也就是说通过你的cellId找到的cell并不是你想要的类型)，这时候需要改下cell的标识 2、编译的时候遇到 no">
+<meta name="keywords" content="iOS,npm,cocoapods">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于Hexo在mac上搭建个人博客">
-<meta property="og:url" content="http://yoursite.com/2017/09/01/基于Hexo在mac上搭建个人博客/index.html">
+<meta property="og:title" content="开发中的一些错误及解决办法">
+<meta property="og:url" content="http://yoursite.com/2017/09/14/开发中的一些错误及解决办法/index.html">
 <meta property="og:site_name" content="sjxt">
-<meta property="og:description" content="博客的搭建大致分为以下几个步骤  安装Node.js 安装Git 安装Hexo 安装主题 本地运行测试 注册github并创建仓库 部署到github中去   1、安装Node.js安装先安装包管理器brew，参考：http://www.cnblogs.com/EasonJim/p/6287098.html有以上前提后，输入： 1brew install node 验证12node -vnpm -">
+<meta property="og:description" content="1、tableview遇到这种报错failed to obtain a cell from its dataSource12是因为你的cell被调用的早了。先循环使用了cell，后又创建cell。顺序错了可能原因：1、xib的cell没有注册 2、内存中已经有这个cell的缓存了(也就是说通过你的cellId找到的cell并不是你想要的类型)，这时候需要改下cell的标识 2、编译的时候遇到 no">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ojoba1c98.bkt.clouddn.com/img/build-hexo/helloWorld.png">
-<meta property="og:image" content="http://ovlabegmw.bkt.clouddn.com/1.png">
-<meta property="og:image" content="http://ovlabegmw.bkt.clouddn.com/2.png">
-<meta property="og:image" content="http://ovlabegmw.bkt.clouddn.com/3.png">
-<meta property="og:updated_time" content="2017-09-14T17:05:20.000Z">
+<meta property="og:updated_time" content="2017-09-16T00:38:11.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于Hexo在mac上搭建个人博客">
-<meta name="twitter:description" content="博客的搭建大致分为以下几个步骤  安装Node.js 安装Git 安装Hexo 安装主题 本地运行测试 注册github并创建仓库 部署到github中去   1、安装Node.js安装先安装包管理器brew，参考：http://www.cnblogs.com/EasonJim/p/6287098.html有以上前提后，输入： 1brew install node 验证12node -vnpm -">
-<meta name="twitter:image" content="http://ojoba1c98.bkt.clouddn.com/img/build-hexo/helloWorld.png">
+<meta name="twitter:title" content="开发中的一些错误及解决办法">
+<meta name="twitter:description" content="1、tableview遇到这种报错failed to obtain a cell from its dataSource12是因为你的cell被调用的早了。先循环使用了cell，后又创建cell。顺序错了可能原因：1、xib的cell没有注册 2、内存中已经有这个cell的缓存了(也就是说通过你的cellId找到的cell并不是你想要的类型)，这时候需要改下cell的标识 2、编译的时候遇到 no">
 
 
 
@@ -139,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/01/基于Hexo在mac上搭建个人博客/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/14/开发中的一些错误及解决办法/"/>
 
 
 
 
 
-  <title>基于Hexo在mac上搭建个人博客 | sjxt</title>
+  <title>开发中的一些错误及解决办法 | sjxt</title>
   
 
 
@@ -289,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/基于Hexo在mac上搭建个人博客/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/开发中的一些错误及解决办法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sjxt">
@@ -306,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">基于Hexo在mac上搭建个人博客</h1>
+          <h1 class="post-title" itemprop="name headline">开发中的一些错误及解决办法</h1>
         
 
         <div class="post-meta">
@@ -318,8 +313,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T00:00:00-07:00">
-                2017-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T17:21:53-07:00">
+                2017-09-14
               </time>
             
 
@@ -341,8 +336,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客相关/" itemprop="url" rel="index">
-                    <span itemprop="name">博客相关</span>
+                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS开发</span>
                   </a>
                 </span>
 
@@ -358,7 +353,7 @@
 
           
           
-             <span id="/2017/09/01/基于Hexo在mac上搭建个人博客/" class="leancloud_visitors" data-flag-title="基于Hexo在mac上搭建个人博客">
+             <span id="/2017/09/14/开发中的一些错误及解决办法/" class="leancloud_visitors" data-flag-title="开发中的一些错误及解决办法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,65 +384,18 @@
       
 
       
-        <p>博客的搭建大致分为以下几个步骤</p>
-<ul>
-<li>安装Node.js</li>
-<li>安装Git</li>
-<li>安装Hexo</li>
-<li>安装主题</li>
-<li>本地运行测试</li>
-<li>注册github并创建仓库</li>
-<li>部署到github中去</li>
-</ul>
-<hr>
-<h2 id="1、安装Node-js"><a href="#1、安装Node-js" class="headerlink" title="1、安装Node.js"></a><strong><em>1、安装Node.js</em></strong></h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>先安装包管理器brew，参考：<br><a href="http://www.cnblogs.com/EasonJim/p/6287098.html" target="_blank" rel="external">http://www.cnblogs.com/EasonJim/p/6287098.html</a><br>有以上前提后，输入：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install node</div></pre></td></tr></table></figure>
-<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line">npm -v</div></pre></td></tr></table></figure>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//单独运行</div><div class="line">brew update</div><div class="line">brew upgrade node</div><div class="line">npm install -g npm</div><div class="line">//一条运行</div><div class="line">brew update &amp;&amp; brew upgrade node &amp;&amp; npm install -g npm</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="2、安装Git"><a href="#2、安装Git" class="headerlink" title="2、安装Git"></a><strong><em>2、安装Git</em></strong></h2><p>如果安装上面的步骤安装了node.js，那么安装git就只需要在终端输入下面一句就好了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install git</div></pre></td></tr></table></figure>
-<p>验证一下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git --version</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="3、安装Hexo"><a href="#3、安装Hexo" class="headerlink" title="3、安装Hexo"></a><strong><em>3、安装Hexo</em></strong></h2><p>安装Hexo的非常简单，只要一条命令，前提是安装好Node.js与Git</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo-cli</div></pre></td></tr></table></figure>
-<p>初始化，随便创建一个文件夹，名字随便取，<strong><em>cd</em></strong>创建的文件夹里面，执行下面命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure>
-<p>本地启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
-<p>访问本地链接：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
-<p><img src="http://ojoba1c98.bkt.clouddn.com/img/build-hexo/helloWorld.png" alt="这里写图片描述"></p>
-<hr>
-<h2 id="4、安装主题（Next为例）"><a href="#4、安装主题（Next为例）" class="headerlink" title="4、安装主题（Next为例）"></a><strong><em>4、安装主题（Next为例）</em></strong></h2><p>更多主题查看官网<a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a><br>知乎推荐主题<a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">https://www.zhihu.com/question/24422335</a></p>
-<h3 id="复制主题"><a href="#复制主题" class="headerlink" title="复制主题"></a>复制主题</h3><pre><code>Hexo 安装主题的方式非常简单，只需要将主题文件拷贝至站点目录的 themes 目录下， 然后修改下配置文件即可
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> 本地创建的根目录下</div><div class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure>
-<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>打开根目录下的_config.yml文件，找到 theme 字段，并将其值更改为 next</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: next</div></pre></td></tr></table></figure>
-<p>###更改主题外观</p>
-<p>NexT有三个外观，直接更改主题_config.yml文件的 scheme 参数即可，如果显示的是繁体中文，那么站点配置文件中的 language: zh-CN<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#scheme: Muse</span></div><div class="line">scheme: Mist</div><div class="line"><span class="comment">#scheme: Pisces</span></div></pre></td></tr></table></figure></p>
-<p>再执行 hexo clean 和 hexo s 就可以在本地预览效果了</p>
-<hr>
-<h2 id="5、注册github并创建仓库"><a href="#5、注册github并创建仓库" class="headerlink" title="5、注册github并创建仓库"></a><strong><em>5、注册github并创建仓库</em></strong></h2><p>注册账户就不多说了<br>直接进入创建仓库</p>
-<p><img src="http://ovlabegmw.bkt.clouddn.com/1.png" alt="这里写图片描述"></p>
-<p><img src="http://ovlabegmw.bkt.clouddn.com/2.png" alt="这里写图片描述"></p>
-<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">为什么要配置这个ssh？</div><div class="line">配置SSH 是为了绑定个人电脑与仓库的关系，方便之后把博客部署到仓库中</div></pre></td></tr></table></figure>
-<h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH Key"></a>生成SSH Key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C 你的邮箱</div></pre></td></tr></table></figure>
-<p><img src="http://ovlabegmw.bkt.clouddn.com/3.png" alt="这里写图片描述"></p>
-<p>登录Github，右上角 头像 -&gt; Settings —&gt; SSH nd GPG keys —&gt; New SSH key 。把复制的内容粘贴到key中，填好title并点击 Add SSH key</p>
-<h3 id="验证一下是否成功"><a href="#验证一下是否成功" class="headerlink" title="验证一下是否成功"></a>验证一下是否成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div><div class="line">注意要输入yes</div></pre></td></tr></table></figure>
-<p>之后还需要设置username和email,为了记录每次提交的记录</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name your name</div><div class="line">git config --global user.email your_email@youremail.com</div></pre></td></tr></table></figure>
-<hr>
-<h2 id="6、部署到github中去"><a href="#6、部署到github中去" class="headerlink" title="6、部署到github中去"></a><strong><em>6、部署到github中去</em></strong></h2><p>安装Git部署插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>打开_config.yml文件，在最底部修改部署配置，注意严格的空格</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:sjxt/sjxt.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>保存后在终端执行以下命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
-<p>部署完成后可在浏览器输入 yourname.github.io 这样就能看到自己一个属于自己的博客了，由于github是属于国外的服务器，访问起来有点慢，你也可以部署到coding中去，步骤类似，就不多说了</p>
-<p>==如果对你有用，欢迎star一下，谢谢！<a href="https://github.com/sjxt==" target="_blank" rel="external">https://github.com/sjxt==</a></p>
-
+        <h4 id="1、tableview遇到这种报错failed-to-obtain-a-cell-from-its-dataSource"><a href="#1、tableview遇到这种报错failed-to-obtain-a-cell-from-its-dataSource" class="headerlink" title="1、tableview遇到这种报错failed to obtain a cell from its dataSource"></a>1、tableview遇到这种报错failed to obtain a cell from its dataSource</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">是因为你的cell被调用的早了。先循环使用了cell，后又创建cell。顺序错了</div><div class="line">可能原因：1、xib的cell没有注册 2、内存中已经有这个cell的缓存了(也就是说通过你的cellId找到的cell并不是你想要的类型)，这时候需要改下cell的标识</div></pre></td></tr></table></figure>
+<h4 id="2、编译的时候遇到-no-such-file-or-directory-／users／apple／XXX"><a href="#2、编译的时候遇到-no-such-file-or-directory-／users／apple／XXX" class="headerlink" title="2、编译的时候遇到 no such file or directory: ／users／apple／XXX"></a>2、编译的时候遇到 no such file or directory: ／users／apple／XXX</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">是因为编译的时候，在此路径下找不到这个文件，解决这个问题，首先是是要检查缺少的文件是不是在工程中，如果不在工程中，需要从本地拖进去，如果发现已经存在工程中了，或者拖进去还是报错，这时候需要去build phases中搜索这个文件，这时候很可能会搜出现两个相同的文件，这时候，有一个路径是正确的，删除另外一个即可。如果删除了还是不行，需要把两个都删掉，然后重新往工程里拖进这个文件即可</div><div class="line">选中项目文件 - TARGETS - Compile Sources 搜索该文件</div></pre></td></tr></table></figure>
+<h4 id="3、真机测试的时候报错：Could-not-launch-“你的-App”，process-launch-failed-Security"><a href="#3、真机测试的时候报错：Could-not-launch-“你的-App”，process-launch-failed-Security" class="headerlink" title="3、真机测试的时候报错：Could not launch “你的 App”，process launch failed: Security"></a>3、真机测试的时候报错：Could not launch “你的 App”，process launch failed: Security</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">因为你的app没有上线，iOS9开始，需要手动信任Xcode生成的描述文件，打开手机设置-&gt;通用-&gt;描述文件-&gt;点击你的app的描述文件-&gt;点击信任</div></pre></td></tr></table></figure>
+<h4 id="4、真机测试的时候报错：Could-not-find-Developer-Disk-Image"><a href="#4、真机测试的时候报错：Could-not-find-Developer-Disk-Image" class="headerlink" title="4、真机测试的时候报错：Could not find Developer Disk Image"></a>4、真机测试的时候报错：Could not find Developer Disk Image</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">这是因为你的设备系统版本大于Xcode能兼容的系统版本，比如你的设备是iOS10.3，而Xcode版本是8.2（Xcode8.2最大兼容iOS10.2），就会报这个错误。解决办法就是升级Xcode，还可以下载响应的版本，</div><div class="line">路径为/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport</div></pre></td></tr></table></figure>
+<h4 id="5、将app上传到App-Store的时候通常会遇到这个问题：This-aciton-could-not-be-completed-Try-again"><a href="#5、将app上传到App-Store的时候通常会遇到这个问题：This-aciton-could-not-be-completed-Try-again" class="headerlink" title="5、将app上传到App Store的时候通常会遇到这个问题：This aciton could not be completed.Try again"></a>5、将app上传到App Store的时候通常会遇到这个问题：This aciton could not be completed.Try again</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">很多人说这事苹果爸爸服务器问题，重复尝试几次，总会成功的！</div><div class="line">但是经过尝试发现如果使用Application Loader上传成功率就非常高，所以还是推荐把ipa文件导出直接用Application Loader上传。</div><div class="line">如果Application Loader也不行，需要检查下自己的网络，有时候vpn也会提高速度。</div></pre></td></tr></table></figure>
+<h4 id="6、-ViewController-aMethod-unrecognized-selector-sent-to-instance-0x7fe91e607fb0"><a href="#6、-ViewController-aMethod-unrecognized-selector-sent-to-instance-0x7fe91e607fb0" class="headerlink" title="6、-[ViewController aMethod:]: unrecognized selector sent to instance 0x7fe91e607fb0"></a>6、-[ViewController aMethod:]: unrecognized selector sent to instance 0x7fe91e607fb0</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这是一个经典错误，ViewController不能响应aMethod这个方法，错误原因可能viewController文件中没有实现aMethod这个方法</div></pre></td></tr></table></figure>
+<h4 id="7、UITableView-failed-to-obtain-a-cell-from-its-dataSource"><a href="#7、UITableView-failed-to-obtain-a-cell-from-its-dataSource" class="headerlink" title="7、UITableView () failed to obtain a cell from its dataSource ()"></a>7、UITableView (<uitableview: 0x7ff19b027000;="">) failed to obtain a cell from its dataSource (<viewcontroller: 0x7ff19a507520="">)</viewcontroller:></uitableview:></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这个错误原因是tableView的代理方法-tableView:cellForRowAtIndexPath:需要返回一个UITableViewCell,而你返回了一个nil。另外这个地方返回值不是UITableViewCell类型也会导致崩溃</div></pre></td></tr></table></figure>
+<h4 id="8、模拟器报错：Unable-to-run-app-in-Simulator"><a href="#8、模拟器报错：Unable-to-run-app-in-Simulator" class="headerlink" title="8、模拟器报错：Unable to run app in Simulator"></a>8、模拟器报错：Unable to run app in Simulator</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">解决办法：</div><div class="line">打开模拟器-&gt;Simulator-&gt;Reset Content and Settings...</div><div class="line">如果不行，就重启试试！</div></pre></td></tr></table></figure>
+<h4 id="9、Attempt-to-mutate-immutable-object-with-insertString-atIndex"><a href="#9、Attempt-to-mutate-immutable-object-with-insertString-atIndex" class="headerlink" title="9、Attempt to mutate immutable object with insertString:atIndex:"></a>9、Attempt to mutate immutable object with insertString:atIndex:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这个错是因为你拿字符串调用insertString:atIndex:方法的时候，调用对象不是NSMutableString，应该先转成这个类型再调用</div></pre></td></tr></table></figure>
+<h4 id="10、Unknown-class-XXViewController-in-Interface-Builder-file"><a href="#10、Unknown-class-XXViewController-in-Interface-Builder-file" class="headerlink" title="10、Unknown class XXViewController in Interface Builder file."></a>10、Unknown class XXViewController in Interface Builder file.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">最直接的原因还是相关的symbol没有从静态库中加载进来。这种问题的处理就是在Target的”Build Setting”–&gt;“Other Link Flags”中加上”-all_load -ObjC”这两个标识位，这样就OK了</div></pre></td></tr></table></figure>
+<h4 id="11、编码错误：You-must-rebuild-it-with-bitcode-enabled"><a href="#11、编码错误：You-must-rebuild-it-with-bitcode-enabled" class="headerlink" title="11、编码错误：You must rebuild it with bitcode enabled"></a>11、编码错误：You must rebuild it with bitcode enabled</h4><p>(Xcode setting ENABLE_BITCODE)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Targets—&gt;Build Settings—&gt;Build Options-&gt;Enable Bitcode 设置为NO</div></pre></td></tr></table></figure></p>
+<h4 id="12、App-installation-failed-a-vaild-provsioning-profile-for-this-executable-was-not-found"><a href="#12、App-installation-failed-a-vaild-provsioning-profile-for-this-executable-was-not-found" class="headerlink" title="12、App installation failed a vaild provsioning profile for this executable was not found"></a>12、App installation failed a vaild provsioning profile for this executable was not found</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1、安装证书是否重新导入（证书最好重新安装一下）</div><div class="line">2、调试手机是否已授权</div><div class="line">3、确认xcode选择的调试证书是否正确，team选择是否正确</div><div class="line">4、设置的bundle identifier是否符合证书的命名规则</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -464,13 +412,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/github/" rel="tag"># github</a>
-          
-            <a href="/tags/next/" rel="tag"># next</a>
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
           
             <a href="/tags/npm/" rel="tag"># npm</a>
+          
+            <a href="/tags/cocoapods/" rel="tag"># cocoapods</a>
           
         </div>
       
@@ -483,15 +429,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/09/14/iOS开发常用代码总结(二)/" rel="next" title="iOS开发常用代码总结(二)">
+                <i class="fa fa-chevron-left"></i> iOS开发常用代码总结(二)
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/05/iOS开发常用代码总结(一)/" rel="prev" title="iOS开发常用代码总结(一)">
-                iOS开发常用代码总结(一) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -663,7 +609,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、安装Node-js"><span class="nav-text">1、安装Node.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-text">验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-text">更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、安装Git"><span class="nav-text">2、安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、安装Hexo"><span class="nav-text">3、安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、安装主题（Next为例）"><span class="nav-text">4、安装主题（Next为例）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#复制主题"><span class="nav-text">复制主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启用主题"><span class="nav-text">启用主题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、注册github并创建仓库"><span class="nav-text">5、注册github并创建仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH"><span class="nav-text">配置SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成SSH-Key"><span class="nav-text">生成SSH Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证一下是否成功"><span class="nav-text">验证一下是否成功</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、部署到github中去"><span class="nav-text">6、部署到github中去</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、tableview遇到这种报错failed-to-obtain-a-cell-from-its-dataSource"><span class="nav-text">1、tableview遇到这种报错failed to obtain a cell from its dataSource</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、编译的时候遇到-no-such-file-or-directory-／users／apple／XXX"><span class="nav-text">2、编译的时候遇到 no such file or directory: ／users／apple／XXX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、真机测试的时候报错：Could-not-launch-“你的-App”，process-launch-failed-Security"><span class="nav-text">3、真机测试的时候报错：Could not launch “你的 App”，process launch failed: Security</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、真机测试的时候报错：Could-not-find-Developer-Disk-Image"><span class="nav-text">4、真机测试的时候报错：Could not find Developer Disk Image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、将app上传到App-Store的时候通常会遇到这个问题：This-aciton-could-not-be-completed-Try-again"><span class="nav-text">5、将app上传到App Store的时候通常会遇到这个问题：This aciton could not be completed.Try again</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、-ViewController-aMethod-unrecognized-selector-sent-to-instance-0x7fe91e607fb0"><span class="nav-text">6、-[ViewController aMethod:]: unrecognized selector sent to instance 0x7fe91e607fb0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、UITableView-failed-to-obtain-a-cell-from-its-dataSource"><span class="nav-text">7、UITableView () failed to obtain a cell from its dataSource ()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、模拟器报错：Unable-to-run-app-in-Simulator"><span class="nav-text">8、模拟器报错：Unable to run app in Simulator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、Attempt-to-mutate-immutable-object-with-insertString-atIndex"><span class="nav-text">9、Attempt to mutate immutable object with insertString:atIndex:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、Unknown-class-XXViewController-in-Interface-Builder-file"><span class="nav-text">10、Unknown class XXViewController in Interface Builder file.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、编码错误：You-must-rebuild-it-with-bitcode-enabled"><span class="nav-text">11、编码错误：You must rebuild it with bitcode enabled</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、App-installation-failed-a-vaild-provsioning-profile-for-this-executable-was-not-found"><span class="nav-text">12、App installation failed a vaild provsioning profile for this executable was not found</span></a></li></ol></div>
             
 
           </div>
