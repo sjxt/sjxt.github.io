@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="sjxt">
 <meta property="og:description" content="1、禁止手机睡眠1[UIApplication sharedApplication].idleTimerDisabled = YES; 2、隐藏表格某行cell123456789- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;	// 如果是你需要隐">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-15T00:22:41.000Z">
+<meta property="og:updated_time" content="2017-09-18T18:43:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS开发常用代码总结(一)">
 <meta name="twitter:description" content="1、禁止手机睡眠1[UIApplication sharedApplication].idleTimerDisabled = YES; 2、隐藏表格某行cell123456789- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath&amp;#123;	// 如果是你需要隐">
@@ -432,6 +432,7 @@
 <h4 id="18、清理app缓存"><a href="#18、清理app缓存" class="headerlink" title="18、清理app缓存"></a>18、清理app缓存</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">- (void)handleClearView &#123;</div><div class="line">    //删除两部分</div><div class="line">    //1.删除 sd 图片缓存</div><div class="line">    //先清除内存中的图片缓存</div><div class="line">    [[SDImageCache sharedImageCache] clearMemory];</div><div class="line">    //清除磁盘的缓存</div><div class="line">    [[SDImageCache sharedImageCache] clearDisk];</div><div class="line">    //2.删除自己缓存</div><div class="line">    NSString *myCachePath = [NSHomeDirectory() stringByAppendingPathComponent:@&quot;Library/Caches&quot;];</div><div class="line">    [[NSFileManager defaultManager] removeItemAtPath:myCachePath error:nil];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="19、长按复制功能"><a href="#19、长按复制功能" class="headerlink" title="19、长按复制功能"></a>19、长按复制功能</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    [self.view addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pasteBoard:)]];</div><div class="line">&#125;</div><div class="line">- (void)pasteBoard:(UILongPressGestureRecognizer *)longPress &#123;</div><div class="line">    if (longPress.state == UIGestureRecognizerStateBegan) &#123;</div><div class="line">        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];</div><div class="line">        pasteboard.string = @&quot;需要复制的文本&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="20、获取手机和app信息"><a href="#20、获取手机和app信息" class="headerlink" title="20、获取手机和app信息"></a>20、获取手机和app信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];</div><div class="line">CFShow(infoDictionary);</div><div class="line">// app名称</div><div class="line">NSString *app_Name = [infoDictionary objectForKey:@&quot;CFBundleDisplayName&quot;];</div><div class="line">// app版本</div><div class="line">NSString *app_Version = [infoDictionary objectForKey:@&quot;CFBundleShortVersionString&quot;];</div><div class="line">// app build版本</div><div class="line">NSString *app_build = [infoDictionary objectForKey:@&quot;CFBundleVersion&quot;];</div><div class="line"></div><div class="line">    //手机序列号</div><div class="line">    NSString* identifierNumber = [[UIDevice currentDevice] uniqueIdentifier];</div><div class="line">    NSLog(@&quot;手机序列号: %@&quot;,identifierNumber);</div><div class="line">    //手机别名： 用户定义的名称</div><div class="line">    NSString* userPhoneName = [[UIDevice currentDevice] name];</div><div class="line">    NSLog(@&quot;手机别名: %@&quot;, userPhoneName);</div><div class="line">    //设备名称</div><div class="line">    NSString* deviceName = [[UIDevice currentDevice] systemName];</div><div class="line">    NSLog(@&quot;设备名称: %@&quot;,deviceName );</div><div class="line">    //手机系统版本</div><div class="line">    NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];</div><div class="line">    NSLog(@&quot;手机系统版本: %@&quot;, phoneVersion);</div><div class="line">    //手机型号</div><div class="line">    NSString* phoneModel = [[UIDevice currentDevice] model];</div><div class="line">    NSLog(@&quot;手机型号: %@&quot;,phoneModel );</div><div class="line">    //地方型号  （国际化区域名称）</div><div class="line">    NSString* localPhoneModel = [[UIDevice currentDevice] localizedModel];</div><div class="line">    NSLog(@&quot;国际化区域名称: %@&quot;,localPhoneModel );</div><div class="line"></div><div class="line">    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];</div><div class="line">    // 当前应用名称</div><div class="line">    NSString *appCurName = [infoDictionary objectForKey:@&quot;CFBundleDisplayName&quot;];</div><div class="line">    NSLog(@&quot;当前应用名称：%@&quot;,appCurName);</div><div class="line">    // 当前应用软件版本  比如：1.0.1</div><div class="line">    NSString *appCurVersion = [infoDictionary objectForKey:@&quot;CFBundleShortVersionString&quot;];</div><div class="line">    NSLog(@&quot;当前应用软件版本:%@&quot;,appCurVersion);</div><div class="line">    // 当前应用版本号码  int类型</div><div class="line">    NSString *appCurVersionNum = [infoDictionary objectForKey:@&quot;CFBundleVersion&quot;];</div><div class="line">    NSLog(@&quot;当前应用版本号码：%@&quot;,appCurVersionNum);</div></pre></td></tr></table></figure>
+<p>欢迎访问个人博客：<a href="http://sjxt.me/" target="_blank" rel="external">http://sjxt.me/</a></p>
 
       
     </div>
@@ -553,7 +554,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -564,7 +565,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -575,7 +576,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -692,7 +693,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.9k字</span>
+  <span class="post-count">博客全站共4.6k字</span>
 </div>
 
         

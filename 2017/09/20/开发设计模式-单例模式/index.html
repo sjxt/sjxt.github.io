@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="iOS,npm,cocoapods," />
+  <meta name="keywords" content="iOS,Swfit,Java," />
 
 
 
@@ -94,18 +94,33 @@
 
 
 
-<meta name="description" content="1、tableview遇到这种报错failed to obtain a cell from its dataSource12是因为你的cell被调用的早了。先循环使用了cell，后又创建cell。顺序错了可能原因：1、xib的cell没有注册 2、内存中已经有这个cell的缓存了(也就是说通过你的cellId找到的cell并不是你想要的类型)，这时候需要改下cell的标识 2、编译的时候遇到 no">
-<meta name="keywords" content="iOS,npm,cocoapods">
+<meta name="description" content="设计模式设计模式分为三大类：创建型、结构型、行为型在Java中有24中设计模式 创建型：单例1、为什么用单例模式？12345678910OC的编程习惯（Java编程习惯、Swift编程习惯）xcode4.2之前是MRC（手动分配和释放内存）alloc：开辟内存、release：释放内存开发者有时候就容易忽略释放问题xcode4.2之后ARC（自动引用计数）---由于alloc init在代码中到处">
+<meta name="keywords" content="iOS,Swfit,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开发中的一些错误及解决办法">
-<meta property="og:url" content="http://yoursite.com/2017/09/14/开发中的一些错误及解决办法/index.html">
+<meta property="og:title" content="开发设计模式-单例模式">
+<meta property="og:url" content="http://yoursite.com/2017/09/20/开发设计模式-单例模式/index.html">
 <meta property="og:site_name" content="sjxt">
-<meta property="og:description" content="1、tableview遇到这种报错failed to obtain a cell from its dataSource12是因为你的cell被调用的早了。先循环使用了cell，后又创建cell。顺序错了可能原因：1、xib的cell没有注册 2、内存中已经有这个cell的缓存了(也就是说通过你的cellId找到的cell并不是你想要的类型)，这时候需要改下cell的标识 2、编译的时候遇到 no">
+<meta property="og:description" content="设计模式设计模式分为三大类：创建型、结构型、行为型在Java中有24中设计模式 创建型：单例1、为什么用单例模式？12345678910OC的编程习惯（Java编程习惯、Swift编程习惯）xcode4.2之前是MRC（手动分配和释放内存）alloc：开辟内存、release：释放内存开发者有时候就容易忽略释放问题xcode4.2之后ARC（自动引用计数）---由于alloc init在代码中到处">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-18T18:43:08.000Z">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-c1a96a512e91931e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-105c91f754e0a84d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-a8eb1c12d600dafd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-59cbc1261a4bee48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-68a6a39e62c9e9aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-2ff619cab627797f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-64011d86edad7d1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-5a1e8b808c82afe6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-26a0e6cb58459e90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-284465e874e3af7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-14dd523b4aee81b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-e3aa0db89cafd40a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-e8cf7b9d2bb1e35a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1778634-a8545ade764fab5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-09-20T23:19:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开发中的一些错误及解决办法">
-<meta name="twitter:description" content="1、tableview遇到这种报错failed to obtain a cell from its dataSource12是因为你的cell被调用的早了。先循环使用了cell，后又创建cell。顺序错了可能原因：1、xib的cell没有注册 2、内存中已经有这个cell的缓存了(也就是说通过你的cellId找到的cell并不是你想要的类型)，这时候需要改下cell的标识 2、编译的时候遇到 no">
+<meta name="twitter:title" content="开发设计模式-单例模式">
+<meta name="twitter:description" content="设计模式设计模式分为三大类：创建型、结构型、行为型在Java中有24中设计模式 创建型：单例1、为什么用单例模式？12345678910OC的编程习惯（Java编程习惯、Swift编程习惯）xcode4.2之前是MRC（手动分配和释放内存）alloc：开辟内存、release：释放内存开发者有时候就容易忽略释放问题xcode4.2之后ARC（自动引用计数）---由于alloc init在代码中到处">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1778634-c1a96a512e91931e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
 
@@ -134,13 +149,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/14/开发中的一些错误及解决办法/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/20/开发设计模式-单例模式/"/>
 
 
 
 
 
-  <title>开发中的一些错误及解决办法 | sjxt</title>
+  <title>开发设计模式-单例模式 | sjxt</title>
   
 
 
@@ -284,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/开发中的一些错误及解决办法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/20/开发设计模式-单例模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sjxt">
@@ -301,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">开发中的一些错误及解决办法</h1>
+          <h1 class="post-title" itemprop="name headline">开发设计模式-单例模式</h1>
         
 
         <div class="post-meta">
@@ -313,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T17:21:53-07:00">
-                2017-09-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T16:13:19-07:00">
+                2017-09-20
               </time>
             
 
@@ -336,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/iOS开发/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS开发</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -353,7 +368,7 @@
 
           
           
-             <span id="/2017/09/14/开发中的一些错误及解决办法/" class="leancloud_visitors" data-flag-title="开发中的一些错误及解决办法">
+             <span id="/2017/09/20/开发设计模式-单例模式/" class="leancloud_visitors" data-flag-title="开发设计模式-单例模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -384,19 +399,23 @@
       
 
       
-        <h4 id="1、tableview遇到这种报错failed-to-obtain-a-cell-from-its-dataSource"><a href="#1、tableview遇到这种报错failed-to-obtain-a-cell-from-its-dataSource" class="headerlink" title="1、tableview遇到这种报错failed to obtain a cell from its dataSource"></a>1、tableview遇到这种报错failed to obtain a cell from its dataSource</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">是因为你的cell被调用的早了。先循环使用了cell，后又创建cell。顺序错了</div><div class="line">可能原因：1、xib的cell没有注册 2、内存中已经有这个cell的缓存了(也就是说通过你的cellId找到的cell并不是你想要的类型)，这时候需要改下cell的标识</div></pre></td></tr></table></figure>
-<h4 id="2、编译的时候遇到-no-such-file-or-directory-／users／apple／XXX"><a href="#2、编译的时候遇到-no-such-file-or-directory-／users／apple／XXX" class="headerlink" title="2、编译的时候遇到 no such file or directory: ／users／apple／XXX"></a>2、编译的时候遇到 no such file or directory: ／users／apple／XXX</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">是因为编译的时候，在此路径下找不到这个文件，解决这个问题，首先是是要检查缺少的文件是不是在工程中，如果不在工程中，需要从本地拖进去，如果发现已经存在工程中了，或者拖进去还是报错，这时候需要去build phases中搜索这个文件，这时候很可能会搜出现两个相同的文件，这时候，有一个路径是正确的，删除另外一个即可。如果删除了还是不行，需要把两个都删掉，然后重新往工程里拖进这个文件即可</div><div class="line">选中项目文件 - TARGETS - Compile Sources 搜索该文件</div></pre></td></tr></table></figure>
-<h4 id="3、真机测试的时候报错：Could-not-launch-“你的-App”，process-launch-failed-Security"><a href="#3、真机测试的时候报错：Could-not-launch-“你的-App”，process-launch-failed-Security" class="headerlink" title="3、真机测试的时候报错：Could not launch “你的 App”，process launch failed: Security"></a>3、真机测试的时候报错：Could not launch “你的 App”，process launch failed: Security</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">因为你的app没有上线，iOS9开始，需要手动信任Xcode生成的描述文件，打开手机设置-&gt;通用-&gt;描述文件-&gt;点击你的app的描述文件-&gt;点击信任</div></pre></td></tr></table></figure>
-<h4 id="4、真机测试的时候报错：Could-not-find-Developer-Disk-Image"><a href="#4、真机测试的时候报错：Could-not-find-Developer-Disk-Image" class="headerlink" title="4、真机测试的时候报错：Could not find Developer Disk Image"></a>4、真机测试的时候报错：Could not find Developer Disk Image</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">这是因为你的设备系统版本大于Xcode能兼容的系统版本，比如你的设备是iOS10.3，而Xcode版本是8.2（Xcode8.2最大兼容iOS10.2），就会报这个错误。解决办法就是升级Xcode，还可以下载响应的版本，</div><div class="line">路径为/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport</div></pre></td></tr></table></figure>
-<h4 id="5、将app上传到App-Store的时候通常会遇到这个问题：This-aciton-could-not-be-completed-Try-again"><a href="#5、将app上传到App-Store的时候通常会遇到这个问题：This-aciton-could-not-be-completed-Try-again" class="headerlink" title="5、将app上传到App Store的时候通常会遇到这个问题：This aciton could not be completed.Try again"></a>5、将app上传到App Store的时候通常会遇到这个问题：This aciton could not be completed.Try again</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">很多人说这事苹果爸爸服务器问题，重复尝试几次，总会成功的！</div><div class="line">但是经过尝试发现如果使用Application Loader上传成功率就非常高，所以还是推荐把ipa文件导出直接用Application Loader上传。</div><div class="line">如果Application Loader也不行，需要检查下自己的网络，有时候vpn也会提高速度。</div></pre></td></tr></table></figure>
-<h4 id="6、-ViewController-aMethod-unrecognized-selector-sent-to-instance-0x7fe91e607fb0"><a href="#6、-ViewController-aMethod-unrecognized-selector-sent-to-instance-0x7fe91e607fb0" class="headerlink" title="6、-[ViewController aMethod:]: unrecognized selector sent to instance 0x7fe91e607fb0"></a>6、-[ViewController aMethod:]: unrecognized selector sent to instance 0x7fe91e607fb0</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这是一个经典错误，ViewController不能响应aMethod这个方法，错误原因可能viewController文件中没有实现aMethod这个方法</div></pre></td></tr></table></figure>
-<h4 id="7、UITableView-failed-to-obtain-a-cell-from-its-dataSource"><a href="#7、UITableView-failed-to-obtain-a-cell-from-its-dataSource" class="headerlink" title="7、UITableView () failed to obtain a cell from its dataSource ()"></a>7、UITableView (<uitableview: 0x7ff19b027000;="">) failed to obtain a cell from its dataSource (<viewcontroller: 0x7ff19a507520="">)</viewcontroller:></uitableview:></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这个错误原因是tableView的代理方法-tableView:cellForRowAtIndexPath:需要返回一个UITableViewCell,而你返回了一个nil。另外这个地方返回值不是UITableViewCell类型也会导致崩溃</div></pre></td></tr></table></figure>
-<h4 id="8、模拟器报错：Unable-to-run-app-in-Simulator"><a href="#8、模拟器报错：Unable-to-run-app-in-Simulator" class="headerlink" title="8、模拟器报错：Unable to run app in Simulator"></a>8、模拟器报错：Unable to run app in Simulator</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">解决办法：</div><div class="line">打开模拟器-&gt;Simulator-&gt;Reset Content and Settings...</div><div class="line">如果不行，就重启试试！</div></pre></td></tr></table></figure>
-<h4 id="9、Attempt-to-mutate-immutable-object-with-insertString-atIndex"><a href="#9、Attempt-to-mutate-immutable-object-with-insertString-atIndex" class="headerlink" title="9、Attempt to mutate immutable object with insertString:atIndex:"></a>9、Attempt to mutate immutable object with insertString:atIndex:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这个错是因为你拿字符串调用insertString:atIndex:方法的时候，调用对象不是NSMutableString，应该先转成这个类型再调用</div></pre></td></tr></table></figure>
-<h4 id="10、Unknown-class-XXViewController-in-Interface-Builder-file"><a href="#10、Unknown-class-XXViewController-in-Interface-Builder-file" class="headerlink" title="10、Unknown class XXViewController in Interface Builder file."></a>10、Unknown class XXViewController in Interface Builder file.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">最直接的原因还是相关的symbol没有从静态库中加载进来。这种问题的处理就是在Target的”Build Setting”–&gt;“Other Link Flags”中加上”-all_load -ObjC”这两个标识位，这样就OK了</div></pre></td></tr></table></figure>
-<h4 id="11、编码错误：You-must-rebuild-it-with-bitcode-enabled"><a href="#11、编码错误：You-must-rebuild-it-with-bitcode-enabled" class="headerlink" title="11、编码错误：You must rebuild it with bitcode enabled"></a>11、编码错误：You must rebuild it with bitcode enabled</h4><p>(Xcode setting ENABLE_BITCODE)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Targets—&gt;Build Settings—&gt;Build Options-&gt;Enable Bitcode 设置为NO</div></pre></td></tr></table></figure></p>
-<h4 id="12、App-installation-failed-a-vaild-provsioning-profile-for-this-executable-was-not-found"><a href="#12、App-installation-failed-a-vaild-provsioning-profile-for-this-executable-was-not-found" class="headerlink" title="12、App installation failed a vaild provsioning profile for this executable was not found"></a>12、App installation failed a vaild provsioning profile for this executable was not found</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1、安装证书是否重新导入（证书最好重新安装一下）</div><div class="line">2、调试手机是否已授权</div><div class="line">3、确认xcode选择的调试证书是否正确，team选择是否正确</div><div class="line">4、设置的bundle identifier是否符合证书的命名规则</div></pre></td></tr></table></figure>
-<p>欢迎访问个人博客：<a href="http://sjxt.me/" target="_blank" rel="external">http://sjxt.me/</a></p>
+        <h5 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h5><p>设计模式分为三大类：创建型、结构型、行为型<br>在Java中有24中设计模式</p>
+<h6 id="创建型：单例"><a href="#创建型：单例" class="headerlink" title="创建型：单例"></a>创建型：单例</h6><p>1、为什么用单例模式？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">OC的编程习惯（Java编程习惯、Swift编程习惯）</div><div class="line">xcode4.2之前是MRC（手动分配和释放内存）alloc：开辟内存、release：释放内存</div><div class="line">开发者有时候就容易忽略释放问题</div><div class="line"></div><div class="line">xcode4.2之后ARC（自动引用计数）---</div><div class="line">由于alloc init在代码中到处出现，但是对象不会马上就释放，只在没有引用指向的时候就释放</div><div class="line">，这样导致由于没有及时释放而产生的OOM（内存溢出）</div><div class="line"></div><div class="line">在整个程序中为了避免创建多个对象，就引入了单例</div><div class="line">UIApplication</div></pre></td></tr></table></figure></p>
+<p>2、单例模式的使用？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">2.1 单例模式的特点</div><div class="line">	1、有且只有一个实例（全局唯一）</div><div class="line">    2、必须自行创建一个实例</div><div class="line">    3、必须提供一个全局实例（公开的方法），让其暴露给外部使用</div><div class="line"></div><div class="line">2.2 单例模式的角色划分</div><div class="line">	角色：单例类、客户端（使用者）</div><div class="line"></div><div class="line">2.3 单例模式-约束</div><div class="line">	约束1: 提供一个静态实例，一般情况喜爱设置为nil（在swift、Java中也是如此）</div><div class="line">	约束2: 提供一个方法创建单例，如果单例存在就返回，如果不存在就创建</div><div class="line">	约束3: 在OC里面需要重写父类的中allocWithZone方法，保证初始化的时候是一个单例，当我们在调用alloc的时候回调该方法</div><div class="line">    约束4: OC需要重写父类copyWithZone.....(在swift中你要将构造方法私有化，在Java中也是需要构造方法私有化)</div></pre></td></tr></table></figure></p>
+<p>3、 单例的实现</p>
+<ul>
+<li><p>实现OC-单例模式<br>以下2个方式为<strong>懒汉式</strong>（等需要的是创建）<br>  1、标准单例（非线程安全）——————————-<br><img src="http://upload-images.jianshu.io/upload_images/1778634-c1a96a512e91931e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/1778634-105c91f754e0a84d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>  2、标准单例GCD（线程安全）——————————-<br><img src="http://upload-images.jianshu.io/upload_images/1778634-a8eb1c12d600dafd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/1778634-59cbc1261a4bee48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><strong>饿汉式</strong>（不管你要不要我都进行创建）<br>  3、实现<br>注意：load方法（当程序运行的时候，回调该方法）一般不会用这个方法<br><img src="http://upload-images.jianshu.io/upload_images/1778634-68a6a39e62c9e9aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/1778634-2ff619cab627797f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>  4、@synchronized实现<br><img src="http://upload-images.jianshu.io/upload_images/1778634-64011d86edad7d1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/1778634-5a1e8b808c82afe6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>实现Swift-单例模式<br>—————————————————————————————————<br>  1、标准的单例（单例是不能够被继承的，在swift中可以用final关键字修饰-非线程安全<br><img src="http://upload-images.jianshu.io/upload_images/1778634-26a0e6cb58459e90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>  2、静态属性实例化写法-线程安全<br><img src="http://upload-images.jianshu.io/upload_images/1778634-284465e874e3af7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>  3、结构体方法实现单例-线程安全<br><img src="http://upload-images.jianshu.io/upload_images/1778634-14dd523b4aee81b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</li>
+<li><p>实现Java-单例模式<br>—————————————————————————————————<br>  1、标准单例-非线程安全<br><img src="http://upload-images.jianshu.io/upload_images/1778634-e3aa0db89cafd40a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>  2、标准单例-线程安全<br><img src="http://upload-images.jianshu.io/upload_images/1778634-e8cf7b9d2bb1e35a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>  3、枚举定义单例(这属于java的高级编程)<br><img src="http://upload-images.jianshu.io/upload_images/1778634-a8545ade764fab5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>  4、……</p>
+</li>
+</ul>
 
       
     </div>
@@ -416,9 +435,9 @@
           
             <a href="/tags/iOS/" rel="tag"># iOS</a>
           
-            <a href="/tags/npm/" rel="tag"># npm</a>
+            <a href="/tags/Swfit/" rel="tag"># Swfit</a>
           
-            <a href="/tags/cocoapods/" rel="tag"># cocoapods</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -431,8 +450,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/14/iOS开发常用代码总结(二)/" rel="next" title="iOS开发常用代码总结(二)">
-                <i class="fa fa-chevron-left"></i> iOS开发常用代码总结(二)
+              <a href="/2017/09/14/开发中的一些错误及解决办法/" rel="next" title="开发中的一些错误及解决办法">
+                <i class="fa fa-chevron-left"></i> 开发中的一些错误及解决办法
               </a>
             
           </div>
@@ -440,10 +459,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/20/开发设计模式-单例模式/" rel="prev" title="开发设计模式-单例模式">
-                开发设计模式-单例模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -615,7 +630,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、tableview遇到这种报错failed-to-obtain-a-cell-from-its-dataSource"><span class="nav-text">1、tableview遇到这种报错failed to obtain a cell from its dataSource</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、编译的时候遇到-no-such-file-or-directory-／users／apple／XXX"><span class="nav-text">2、编译的时候遇到 no such file or directory: ／users／apple／XXX</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、真机测试的时候报错：Could-not-launch-“你的-App”，process-launch-failed-Security"><span class="nav-text">3、真机测试的时候报错：Could not launch “你的 App”，process launch failed: Security</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、真机测试的时候报错：Could-not-find-Developer-Disk-Image"><span class="nav-text">4、真机测试的时候报错：Could not find Developer Disk Image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、将app上传到App-Store的时候通常会遇到这个问题：This-aciton-could-not-be-completed-Try-again"><span class="nav-text">5、将app上传到App Store的时候通常会遇到这个问题：This aciton could not be completed.Try again</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、-ViewController-aMethod-unrecognized-selector-sent-to-instance-0x7fe91e607fb0"><span class="nav-text">6、-[ViewController aMethod:]: unrecognized selector sent to instance 0x7fe91e607fb0</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、UITableView-failed-to-obtain-a-cell-from-its-dataSource"><span class="nav-text">7、UITableView () failed to obtain a cell from its dataSource ()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8、模拟器报错：Unable-to-run-app-in-Simulator"><span class="nav-text">8、模拟器报错：Unable to run app in Simulator</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9、Attempt-to-mutate-immutable-object-with-insertString-atIndex"><span class="nav-text">9、Attempt to mutate immutable object with insertString:atIndex:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10、Unknown-class-XXViewController-in-Interface-Builder-file"><span class="nav-text">10、Unknown class XXViewController in Interface Builder file.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11、编码错误：You-must-rebuild-it-with-bitcode-enabled"><span class="nav-text">11、编码错误：You must rebuild it with bitcode enabled</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12、App-installation-failed-a-vaild-provsioning-profile-for-this-executable-was-not-found"><span class="nav-text">12、App installation failed a vaild provsioning profile for this executable was not found</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#设计模式"><span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#创建型：单例"><span class="nav-text">创建型：单例</span></a></li></ol></li></ol></div>
             
 
           </div>
